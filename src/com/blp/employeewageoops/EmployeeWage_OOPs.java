@@ -3,18 +3,29 @@ package com.blp.employeewageoops;
 public class EmployeeWage_OOPs {
     public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
-
-    public static void main(String[] args) {
-        empWage("Atos", 19, 16, 80);
-        empWage("Capgemini", 15, 20, 90);
-
+    private final String company;
+    private final int empRatePerHr;
+    private final int maxWorkDays;
+    private final int maxWorkHrs;
+    private int totalWage;
+    public EmployeeWage_OOPs(String company, int empRatePerHr, int maxWorkDays, int maxWorkHrs) {
+        this.company = company;
+        this.empRatePerHr = empRatePerHr;
+        this.maxWorkDays = maxWorkDays;
+        this.maxWorkHrs = maxWorkHrs;
     }
 
-    public static void empWage(String company, int empRatePerHr, int maxWorkDays, int maxWorkHrs) {
+    public static void main(String[] args) {
+        EmployeeWage_OOPs tcs = new EmployeeWage_OOPs("TCS", 20,15,60);
+        EmployeeWage_OOPs mindtree = new EmployeeWage_OOPs("Mindtree", 18,20,90);
+        tcs.empWage();
+        mindtree.empWage();
+    }
+
+    public int empWage() {
         int empHrs, empWage;
         int day = 1;
         int totalHours = 0;
-        int totalWage = 0;
         while (day <= maxWorkDays && totalHours <= maxWorkHrs) {
             day++;
             double empCheck = Math.floor(Math.random() * 10) % 3;
@@ -32,10 +43,9 @@ public class EmployeeWage_OOPs {
             totalWage = totalWage + empWage;
             System.out.println("Emp Wage: " + empWage);
         }
+
         System.out.println("The emp wage for employee in the " + company + " is " + totalWage);
         return totalWage;
     }
+
 }
-
-
-
