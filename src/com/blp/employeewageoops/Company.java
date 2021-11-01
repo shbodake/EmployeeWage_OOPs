@@ -5,6 +5,7 @@ public class Company {
     private int empRatePerHr;
     private int maxWorkDays;
     private int maxWorkHrs;
+    private int totalWage;
 
     public Company(String companyName, int empRatePerHr, int maxWorkDays, int maxWorkHrs) {
         this.companyName = companyName;
@@ -56,6 +57,7 @@ public class Company {
                 ", empRatePerHr=" + empRatePerHr +
                 ", maxWorkDays=" + maxWorkDays +
                 ", maxWorkHrs=" + maxWorkHrs +
+                ", totalWage=" + totalWage +
                 '}';
     }
 
